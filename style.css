@@ -22,4 +22,35 @@ body {
   overflow: hidden;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(https://tatouagenkit.com/cdn/shop/articles/IMG_3895.jpg?v=1703605883&width=1000);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
+}
+.navbar__title {
+  font-size: 5rem;
+  color: white;
+}
+.navbar__links {
+  display: flex;
+}
+
+.presentation {
+  background-color: rgb(73, 73, 73);
+  color: white;
+  height: 25rem;
+  text-align: center;
+}
+.galerie {
+  background-color: black;
+}
+.galerie__images {
+  display: grid;
+}
+
 /*# sourceMappingURL=style.css.map */
