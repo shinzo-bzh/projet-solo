@@ -10,6 +10,6 @@ add_theme_support('menus');
 
 // Define menus locations
 register_nav_menus([
-    'main-menu'  => 'Main navigation',
+    'main-menu'  => 'Main menu',
     'footer-menu'     => 'Footer navigation'
 ]);
