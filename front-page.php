@@ -4,7 +4,7 @@
 
 <main>
 
-<div >
+<div style="background-image: 'img\banniere.jpg'>
 
 
   
@@ -45,6 +45,7 @@
   <div>Réalisations</div>
 
   <div class="galerie__images">  </div>
+  
 
 </div>
 
@@ -72,7 +73,10 @@
 
 <div><?php echo get_field('avis_title'); ?>
   <div><?php echo get_field('avis_img'); ?></div>
+
 </div>
+<?php echo do_shortcode('[formidable id=1]'); ?>
+
 
 </body>
 
