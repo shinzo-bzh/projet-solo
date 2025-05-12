@@ -1,0 +1,22 @@
+// Abstracts
+@import 'abstracts/variables';
+
+// Base
+@import 'base/base';
+
+// Components
+@import 'components/header';
+@import 'components/contact';
+@import 'components/salon';
+@import 'components/hygiene';
+@import 'components/galerie';
+@import 'components/projet';
+@import 'components/tatouages';
+@import 'components/accueil';
+
+// Styles globaux
+body {
+    margin-top: 80px; // Pour compenser le header fixe
+    background-color: $color-dark;
+    color: $color-light;
+} 

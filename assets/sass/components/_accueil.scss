@@ -1,0 +1,190 @@
+.accueil {
+    &-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: $spacing-large;
+    }
+
+    &__title {
+        color: $color-accent;
+        font-size: 1.8rem;
+        margin-bottom: $spacing-large;
+        text-align: center;
+    }
+
+    &__video {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto $spacing-large;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: $shadow-dark;
+    }
+
+    &__section {
+        background-color: $color-dark-secondary;
+        padding: $spacing-large;
+        border-radius: 8px;
+        box-shadow: $shadow-dark;
+        margin-bottom: $spacing-large;
+
+        &-title {
+            color: $color-accent;
+            font-size: 2.2rem;
+            margin-bottom: $spacing-medium;
+            text-align: center;
+        }
+    }
+
+    &__gallery {
+        margin: $spacing-large * 2 auto;
+        max-width: 1000px;
+        padding: 0 $spacing-medium;
+        
+        .rl-gallery-title {
+            text-align: center;
+            color: $color-accent;
+            font-size: 2.2rem;
+            margin-bottom: $spacing-large;
+            position: relative;
+            padding-bottom: $spacing-medium;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, $color-accent, transparent);
+            }
+
+            &::before {
+                content: '✧';
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: $color-accent;
+                font-size: 1.5rem;
+                opacity: 0.8;
+            }
+        }
+        
+        .rl-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: $spacing-medium;
+            margin: 0 auto;
+        }
+
+        .rl-gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: $shadow-dark;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__presta {
+        &-title {
+            color: $color-accent;
+            font-size: 2.2rem;
+            margin-bottom: $spacing-medium;
+            text-align: center;
+            position: relative;
+            padding-bottom: $spacing-medium;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, $color-accent, transparent);
+            }
+
+            &::before {
+                content: '✧';
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: $color-accent;
+                font-size: 1.5rem;
+                opacity: 0.8;
+            }
+        }
+
+        &-text {
+            color: $color-light;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
+
+    &__avis {
+        text-align: center;
+        margin-top: $spacing-large;
+
+        a {
+            display: inline-block;
+            background-color: $color-accent;
+            color: $color-light;
+            padding: $spacing-small $spacing-large;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($color-accent, 10%);
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        &-container {
+            padding: $spacing-medium;
+        }
+
+        &__title {
+            font-size: 2.2rem;
+        }
+
+        &__section {
+            padding: $spacing-medium;
+
+            &-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        &__presta {
+            &-title {
+                font-size: 1.8rem;
+            }
+
+            &-text {
+                font-size: 1rem;
+            }
+        }
+    }
+} 

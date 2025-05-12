@@ -1,25 +1,12 @@
 {
-  "name": "WordPress-theme-boilerplate",
-  "version": "1.6",
-  "description": "",
+  "name": "wordpress-theme-boilerplate",
+  "version": "1.0.0",
+  "description": "WordPress Theme Boilerplate",
   "scripts": {
-    "deploy": "npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
-    "build-autoprefix": "postcss --use autoprefixer --output style.css style.css",
-    "build-cleancss": "cleancss -o style.css style.css",
-    "build-sass": "sass sass/styles.sass style.css",
-    "watch": "npm run build-sass -- --watch"
+    "sass": "sass assets/sass/style.scss style.css --watch",
+    "sass:build": "sass assets/sass/style.scss style.css --style compressed"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "clean-css-cli": "^5.6.3",
-    "postcss-cli": "^11.0.0",
-    "sass": "^1.82.0"
-  },
-  "browserslist": [
-    "last 4 version",
-    "> 0.5%",
-    "not dead"
-  ]
+    "sass": "^1.69.5"
+  }
 }

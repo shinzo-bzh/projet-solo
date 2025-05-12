@@ -1,0 +1,111 @@
+.galerie {
+    &-contenu {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+        background-color: $color-dark-secondary;
+        border-radius: 12px;
+        box-shadow: $shadow-dark;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, $color-accent, darken($color-accent, 20%));
+        }
+
+        .rl-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            padding: 0;
+            width: 100%;
+
+            .rl-gallery-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 0;
+                box-shadow: none;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                width: 100%;
+                height: 250px;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.5s ease;
+                    cursor: pointer;
+                }
+
+                .rl-gallery-caption {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+                    padding: $spacing-medium;
+                    color: $color-light;
+                    font-size: 1rem;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                &:hover .rl-gallery-caption {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .rl-gallery-pagination {
+            display: flex;
+            justify-content: center;
+            gap: $spacing-small;
+            margin-top: $spacing-large;
+            padding: $spacing-medium;
+
+            .page-numbers {
+                color: $color-light;
+                padding: $spacing-small $spacing-medium;
+                border-radius: 4px;
+                background-color: rgba($color-accent, 0.1);
+                transition: all 0.3s ease;
+
+                &:hover, &.current {
+                    background-color: $color-accent;
+                    color: $color-dark;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        &-contenu {
+            padding: 0;
+
+            .rl-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0;
+                padding: 0;
+
+                .rl-gallery-item {
+                    height: 200px;
+                }
+            }
+        }
+    }
+} 

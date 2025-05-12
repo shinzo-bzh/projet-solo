@@ -1,0 +1,248 @@
+.salon {
+    &-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: $spacing-large;
+    }
+
+    &__title {
+        color: $color-accent;
+        font-size: 3rem;
+        margin-bottom: $spacing-large;
+        text-align: center;
+        position: relative;
+        padding-bottom: $spacing-medium;
+
+        &--highlight {
+            text-decoration: underline;
+            text-decoration-color: $color-accent;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 8px;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &-bloc {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-large;
+        margin-bottom: $spacing-large;
+        background-color: $color-dark-secondary;
+        border-radius: 12px;
+        box-shadow: $shadow-dark;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, $color-accent, darken($color-accent, 20%));
+        }
+
+        &__content {
+            padding: $spacing-large;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h2 {
+                color: $color-accent;
+                font-size: 2rem;
+                margin-bottom: $spacing-medium;
+                position: relative;
+                padding-left: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            div {
+                color: $color-light;
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+        }
+
+        &__image {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, rgba($color-accent, 0.2), transparent);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.05);
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &-tatoueur {
+        background-color: $color-dark-secondary;
+        padding: $spacing-large;
+        border-radius: 12px;
+        box-shadow: $shadow-dark;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-large;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, $color-accent, darken($color-accent, 20%));
+        }
+
+        &__content {
+            h2 {
+                color: $color-accent;
+                font-size: 2rem;
+                margin-bottom: $spacing-medium;
+                text-align: center;
+                position: relative;
+                padding-bottom: $spacing-small;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60px;
+                    height: 3px;
+                    background: linear-gradient(90deg, $color-accent, darken($color-accent, 20%));
+                    border-radius: 2px;
+                }
+            }
+
+            div {
+                color: $color-light;
+                font-size: 1.1rem;
+                line-height: 1.6;
+                text-align: justify;
+            }
+        }
+
+        &__image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, rgba($color-accent, 0.2), transparent);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.05);
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        &-container {
+            padding: $spacing-medium;
+        }
+
+        &__title {
+            font-size: 2.2rem;
+            padding-bottom: $spacing-small;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+        }
+
+        &-bloc {
+            grid-template-columns: 1fr;
+            gap: 0;
+
+            &__content {
+                padding: $spacing-medium;
+
+                h2 {
+                    font-size: 1.8rem;
+                }
+
+                div {
+                    font-size: 1rem;
+                }
+            }
+
+            &__image {
+                height: 300px;
+            }
+        }
+
+        &-tatoueur {
+            padding: $spacing-medium;
+            grid-template-columns: 1fr;
+
+            &__content {
+                h2 {
+                    font-size: 1.8rem;
+                }
+
+                div {
+                    font-size: 1rem;
+                }
+            }
+
+            &__image {
+                height: 300px;
+            }
+        }
+    }
+} 

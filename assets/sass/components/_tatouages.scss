@@ -1,0 +1,128 @@
+.tatouages {
+    &-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: $spacing-large;
+    }
+
+    &__title {
+        color: $color-accent;
+        font-size: 2.8rem;
+        margin-bottom: $spacing-large;
+        text-align: center;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-large;
+        margin-top: $spacing-large;
+    }
+
+    &-card {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: $shadow-dark;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        &__content {
+            padding: $spacing-large;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+
+            h2 {
+                color: $color-light;
+                font-size: 2rem;
+                margin-bottom: $spacing-medium;
+                position: relative;
+                padding-bottom: $spacing-small;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60px;
+                    height: 3px;
+                    background: linear-gradient(90deg, $color-accent, darken($color-accent, 20%));
+                    border-radius: 2px;
+                }
+            }
+
+            p {
+                color: $color-light;
+                font-size: 1.1rem;
+                line-height: 1.6;
+                opacity: 0.9;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            z-index: 0;
+        }
+    }
+
+    &__no-menu {
+        color: $color-accent;
+        text-align: center;
+        font-size: 1.2rem;
+        grid-column: 1 / -1;
+        padding: $spacing-large;
+        background-color: $color-dark-secondary;
+        border-radius: 8px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        &-container {
+            padding: $spacing-medium;
+        }
+
+        &__title {
+            font-size: 2.2rem;
+        }
+
+        &-grid {
+            grid-template-columns: 1fr;
+            gap: $spacing-medium;
+        }
+
+        &-card {
+            min-height: 250px;
+
+            &__content {
+                padding: $spacing-medium;
+
+                h2 {
+                    font-size: 1.8rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+} 
